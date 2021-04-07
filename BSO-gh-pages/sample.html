@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <title>Balanço Semanal De Obras</title>
+</head>
+
+<body>
+  <a href="" class="button"></a>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-8" style="margin-top: 10px">
+        <h4 style="border: bold; font-size: xx-large; color: rgb(0, 56, 136)">
+          Novo H8 Tipo G - Contrato 102/2018
+        </h4>
+      </div>
+      <div class="col-4">
+        <div class="d-flex justify-content-end" style="margin-top: 10px">
+          <p>23/02/2021</p>
+        </div>
+      </div>
+      <div class="row"></div>
+    </div>
+    <hr style="color: rgb(0, 56, 136)" />
+    <div class="row">
+      <div class="col-2">
+        <div class="d-flex justify-content-center">
+          <img src="https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-4.jpg" class="rounded-img"
+            alt="Image placeholder" />
+        </div>
+        <div class="d-flex justify-content-center">
+          <p style="font-weight: bold">1º Ten Fabiana</p>
+        </div>
+
+      </div>
+    </div>
+    &nbsp;
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <p style="font-weight: bold; text-align: center">EMPENHADO</p>
+        <div class="progress blue">
+          <span class="progress-left">
+            <span class="progress-bar"></span>
+          </span>
+          <span class="progress-right">
+            <span class="progress-bar"></span>
+          </span>
+          <div class="progress-value" id="output_empenhado">90%</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <p style="font-weight: bold; text-align: center">EXECUTADO</p>
+        <div class="progress blue">
+          <span class="progress-left">
+            <span class="progress-bar"></span>
+          </span>
+          <span class="progress-right">
+            <span class="progress-bar"></span>
+          </span>
+          <div class="progress-value" id="output_executado">75%</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <p style="font-weight: bold; text-align: center">MEDIDO</p>
+        <div class="progress blue">
+          <span class="progress-left">
+            <span class="progress-bar"></span>
+          </span>
+          <span class="progress-right">
+            <span class="progress-bar"></span>
+          </span>
+          <div class="progress-value" id="output_medido">65%</div>
+        </div>
+      </div>
+      <div id="cx1" class="col-md-3 col-sm-6">
+        <div class="row">
+          <div class="col-3">
+            <figure class="mx-auto">
+              <img src="ferramentas.png" style="margin-top: 10px; margin-left: 10px" /><br />
+            </figure>
+          </div>
+          &nbsp;&nbsp;
+          <div class="col-6" style="margin-top: 25px; margin-left: 20px; border-radius: 10px">
+            <div class="text-center">
+              <h4 class="rounded" style="color: white; background-color: rgb(0, 56, 136)">
+                FEITO NA SEMANA
+              </h4>
+            </div>
+          </div>
+        </div>
+        <h5 style="color: rgb(0, 56, 136)">Frentes Ativas:</h5>
+        <p>
+          Redes subterrâneas; revisão acabamento dos quartos; limpeza; rede
+          pluvial e hidrossanitária.
+        </p>
+        <h5 style="color: rgb(255, 0, 0)">Alertas:</h5>
+        <p>
+          Inauguração dos blocos D e E; recebiemento provisório; segundo
+          reajuste.
+        </p>
+      </div>
+    </div>
+
+    <div class="w-80 p-3">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+            aria-selected="true">DETALHES DE PROJETO</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+            aria-selected="false">FOTOS</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <p style="font-weight: bolder">
+            <br />
+            &nbsp;&nbsp;REGISTRO: DCTA-2019-5-SP-SV <br /><br />
+            &nbsp;&nbsp;VALOR: R$ 39.929.149,59 <br /><br />
+            &nbsp;&nbsp;PRAZO DE EXECUÇÃO: 03/05/2021 <br /><br />
+            &nbsp;&nbsp;PRAZO DE VIGÊNCIA: 17/08/2021 <br /><br />
+          </p>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="col-sm-12">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-interval="false">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="gerenciamento de obrasbanner site.png" class="c-block mx-auto" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <img src="obras.jpg" class="c-block mx-auto" alt="..." />
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <a class="btn btn-primary" href="index.html" role="button">Voltar</a>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="botao">
+        +Add Atualização
+      </button>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Atualizações de Projeto
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label>EMPENHADO</label>
+                <input class="form-control" type="number" name="empenhado" id="empenhado" />
+              </div>
+              <div>
+                <label>EXECUTADO</label>
+                <input class="form-control" type="number" name="executado" id="executado" />
+              </div>
+              <div>
+                <label>MEDIDO</label>
+                <input class="form-control" type="number" name="medido" id="medido" />
+              </div>
+              <div>
+                <label>FRENTES ATIVAS</label>
+                <input class="form-control" type="text" name="FrentesAtivas" id="FrentesAtivas" />
+              </div>
+              <div>
+                <label>ALERTAS</label>
+                <input class="form-control" type="text" name="alertas" id="alertas" />
+              </div>
+              <div>
+                <label>Upload Fotos</label>
+                <input type="file" class="form-control" id="inputGroupFile01" />
+              </div>
+              <div class="row">
+                <label>Status da obra:</label>
+                <label>
+                  <input type="radio" name="status" value="emAndamento" checked />&nbsp;EM ANDAMENTO &nbsp;&nbsp;
+                </label>
+                <label>
+                  <input type="radio" name="status" value="paralisada" />&nbsp;PARALISADA&nbsp;&nbsp;&nbsp;&nbsp;
+                </label>
+                <label>
+                  <input type="radio" name="status" value="concluida" />&nbsp;CONCLUÍDA
+                </label>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button type="submit" class="btn btn-primary" onclick="myClick()" data-bs-dismiss="modal">
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
