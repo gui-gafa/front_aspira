@@ -1,0 +1,38 @@
+<!--Configurações padrão de pg HTML-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo H8</title>
+</head>
+<body>
+    <!--Todos os componentes criados no react precisam ser injetados dinamicamente na pagina html via js-->
+    <!--Precisa ser especificado onde tudo vai ser injetado (por convenção utiliza-se muito a div "app", mas pode ser qualquer coisa, inclusive uma classe)-->
+    <div id="app"></div>
+    <!--Links do React e ReactDOM tiraddos do site oficial-->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script>
+        function MeuComponente() {
+                //createElement é uma função para criar os components dentro do react
+                //aceita 3 parâmetros principais (componente em si, propriedades a serem passadas pro component, filhos desse component)
+                //todo component criado tem que retorna os elementos do react como output da função 
+                return React.createElement('h1',null,'Teste: conteúdo da div')
+
+        }
+        
+    //ReactDOM é uma variável global (criada pelo 2° link do ste oficial do React CDN)
+    //Com o método render você diz qual component você quer injetar e aonde você quer injetar
+    ReactDOM.render(
+        
+        React.createElement(MeuComponente),
+        //pegando o component e injetando na div "app"
+        document.getElementById("app")
+
+
+    )
+    </script>
+</body>
+</html>
