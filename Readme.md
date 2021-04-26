@@ -1,6 +1,6 @@
 # Sobre
 Repositório criado para armazenar as views do frontend das aplicações dos sistemas da Comissão de obras do DCTA.
-Time: {CODE}cta
+Time: @{CODE}cta
 
 ## Artefato de Visão do projeto
 
@@ -9,5 +9,6 @@ Sistema de informações integrado que possibilita a inclusão e gerenciamento d
 ### Samples
 
 ### Protótipo Home:
+[prototype](https://www.figma.com/file/fAtpmcBCnIVo2aa2Nx9r4T/HomeCodcta)
 
-### Protóipo
+### Protótipo
