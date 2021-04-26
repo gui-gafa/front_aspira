@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function BarraTopo() {
+export default function BarraTopo({nome}) {
   const classes = useStyles();
 
   return (
@@ -34,7 +34,7 @@ export default function BarraTopo() {
             <img src='/fablogo.png' alt='' height = '30'/>
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Relação de Obras    
+            {nome}    
           </Typography>
           <Button color="inherit" startIcon={<AccountCircleIcon />}>Login</Button>
         </Toolbar>

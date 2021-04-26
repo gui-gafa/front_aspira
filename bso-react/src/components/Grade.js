@@ -8,34 +8,9 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
+import {Switch, Route, Link} from 'react-router-dom';
 
-let obras = [
-    {
-       titulo: "Novo H8",
-       descricao: "Reforma do alojamento estudantil dos alunos do ITA.",
-       cidade: "São José dos Campos-SP",
-       cliente: "ITA",
-       fonte: "MEC",
-       foto: "/novo_h8.PNG"
-    },
-    {
-        titulo: "Subestação",
-        descricao: "Reforma da subestação de energia do DCTA.",
-        cidade: "São José dos Campos-SP",
-        cliente: "GAP-SJ",
-        fonte: "EMAER/INPE",
-        foto: "/predio_icea.PNG"
-     },
-     {
-        titulo: "Rede de Água F2",
-        descricao: "Reforma e acompanhamento da rede de água do DCTA.",
-        cidade: "São José dos Campos-SP",
-        cliente: "GAP-SJ",
-        fonte: "EMAER",
-        foto: "/rede_de_agua.PNG"
-     },
 
-];
 
 const useStyles = makeStyles({
     root: {
@@ -47,7 +22,7 @@ const useStyles = makeStyles({
     },
   });
 
-export default function Grade() {
+export default function Grade({obras}) {
     const classes = useStyles();
     
     return (
@@ -74,7 +49,9 @@ export default function Grade() {
                             </CardActionArea>
                             <CardActions > 
                                 <Button size="small" color="primary">
-                                Detalhes
+                                  <Link to='/obra' style={{color: '#5d8aa8'}}>
+                                    detalhes
+                                  </Link>
                                 </Button>
                             </CardActions>
                         </Card>

@@ -1,9 +1,13 @@
 import React from 'react';
 
-const Pagina = () => {
+const config = () => {
     return (
-        <div> Conteúdo da pag config </div>
+        <div>
+            <div> Conteúdo da pag config </div>
+            <img src='predio_icea.PNG'></img>
+        </div>
+
     );
 }
 
-export default Pagina;
+export default config;
