@@ -16,11 +16,11 @@ export default function BotaoSimples({nome}) {
 
   return (
     <div className={classes.root}>
-      <Button justify="flex-end" variant="contained" color="primary" startIcon={<AddIcon />}>
-        <Link to='/config' style={{color: 'white'}} >
+      
+        <Link to='/config' style={{color: 'white',
+                                    textDecoration: 'none'}} justify="flex-end" variant="contained" color="primary" startIcon={<AddIcon />} text-decoration='none' >
           {nome}
         </Link>
-      </Button>
     </div>
   );
 

@@ -50,7 +50,8 @@ export default function Grade({obras}) {
                             </CardActionArea>
                             <CardActions > 
                                 <Button size="small" color="primary">
-                                  <Link to={item.endereco} style={{color: '#5d8aa8'}}>
+                                  <Link to={item.endereco} style={{color: '#5d8aa8',
+                                                                  textDecoration: 'none'}}>
                                     detalhes
                                   </Link>
                                 </Button>
