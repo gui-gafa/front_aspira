@@ -9,6 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import {Switch, Route, Link} from 'react-router-dom';
+import Obra from '../paginas/obra.js'
 
 
 
@@ -49,7 +50,7 @@ export default function Grade({obras}) {
                             </CardActionArea>
                             <CardActions > 
                                 <Button size="small" color="primary">
-                                  <Link to='/obra' style={{color: '#5d8aa8'}}>
+                                  <Link to={item.endereco} style={{color: '#5d8aa8'}}>
                                     detalhes
                                   </Link>
                                 </Button>

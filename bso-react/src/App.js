@@ -2,7 +2,6 @@ import './App.css';
 import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core'
 import Relacao_de_Obras from './Relacao_de_Obras';
 import { BrowserRouter, Link, Route, Switch} from 'react-router-dom';
-import Rotas from './Rotas.js'
 import { Rotate90DegreesCcw } from '@material-ui/icons';
 import React from 'react'
 import ReactDOM from 'react-dom';
