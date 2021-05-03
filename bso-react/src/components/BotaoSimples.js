@@ -17,8 +17,7 @@ export default function BotaoSimples({nome}) {
   return (
     <div className={classes.root}>
       
-        <Link to='/config' style={{color: 'white',
-                                    textDecoration: 'none'}} justify="flex-end" variant="contained" color="primary" startIcon={<AddIcon />} text-decoration='none' >
+        <Link to='/config'style={{ textDecoration: 'none'}}  >
           {nome}
         </Link>
     </div>

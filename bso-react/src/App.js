@@ -1,5 +1,5 @@
 import './App.css';
-import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core'
+import { ThemeProvider, createMuiTheme, makeStyles, useTheme } from '@material-ui/core'
 import Relacao_de_Obras from './Relacao_de_Obras';
 import { BrowserRouter, Link, Route, Switch} from 'react-router-dom';
 import { Rotate90DegreesCcw } from '@material-ui/icons';
@@ -27,8 +27,13 @@ function App() {
       },
       secondary: {
         main : '#ff0000'
-      }
+      },
+    zIndex: {
+      appBar: 1300,
+      drawer: 1200
+    },  
     }
+
   });
 
   const classes = useStyles();

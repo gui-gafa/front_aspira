@@ -5,10 +5,12 @@ import BotaoSimples from './components/BotaoSimples';
 import Grade from './components/Grade';
 import BarraLateral from './components/BarraLateral';
 import {Switch, Route, Link} from 'react-router-dom';
-import Home from './paginas/Home';
+//import Home from './paginas/Home';
 import config from './paginas/config';
 import Obra from './paginas/obra.js';
+import Home from './paginas/home.js';
 import {generatePath} from 'react-router';
+import { makeStyles } from '@material-ui/core/styles';
 
 let obras = [
     {
@@ -46,16 +48,51 @@ let obras = [
 
 let rota = 'texto';
 
+
+const drawerWidth = 10000;
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        display: 'flex',
+      },
+      appBar: {
+        zIndex: theme.zIndex.drawer + 1,
+      },
+      drawer: {
+        width: drawerWidth,
+        flexShrink: 0,
+      },
+      drawerPaper: {
+        width: drawerWidth,
+      },
+      drawerContainer: {
+        overflow: 'auto',
+      },
+      content: {
+        flexGrow: 1,
+        padding: theme.spacing(3),
+      },
+      menuButton: {
+        marginRight: theme.spacing(2),
+      },
+      title: {
+        flexGrow: 1,
+      },
+      grow: {
+          flexGrow: 1
+      },
+}));
+
+
 export default function Relacao_de_Obras({theme}) {
+    
+    const classes = useStyles();
     
     //exact serve pra só funcionar o link se o endereço estiver exatamente igual
     return (
         <Switch>
-            <Route exact path='/' component={Home}>
-                <BarraTopo nome='Relação de Obras'></BarraTopo>  
-                <BarraLateral/ >
-                <BotaoSimples nome='Adicionar Obra'></BotaoSimples>
-                <Grade obras={obras} ></Grade>
+            <Route exact path='/' render={(props) => <Home {...props} nome='Relação de Obras' classes={classes} />}>
+                
             </Route>
 
             <Route exact path='/config' component={config}>
@@ -66,7 +103,6 @@ export default function Relacao_de_Obras({theme}) {
             <Route exact path='/obra' render={(props) => <Obra {...props} nome='Teste' />}>
                 
             </Route>
-
             {
                   obras.map((item, index) => (
 
@@ -78,11 +114,6 @@ export default function Relacao_de_Obras({theme}) {
                     
                   ))
               }
-            
-            
-            
-
-            
         </Switch>
     )
 }

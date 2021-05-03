@@ -8,32 +8,21 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
 
-export default function BarraTopo({nome}) {
-  const classes = useStyles();
+
+export default function BarraTopo({nome}, {classes}) {
 
   return (
-    <div className={classes.root}>
+    <div className={{classes}.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          <IconButton edge="start" className={{classes}.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
           <IconButton>
             <img src='/fablogo.png' alt='' height = '30'/>
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" className={{classes}.title}>
             {nome}    
           </Typography>
           <Button color="inherit" startIcon={<AccountCircleIcon />}>Login</Button>

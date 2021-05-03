@@ -13,44 +13,21 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 
-const drawerWidth = 240;
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  drawerContainer: {
-    overflow: 'auto',
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-  },
-}));
 
-export default function BarraLateral() {
-  const classes = useStyles();
+export default function BarraLateral({classes}) {
+  
 
   return (
     <Drawer
-        className={classes.drawer}
+        className={{classes}.drawer}
         variant="permanent"
         classes={{
-          paper: classes.drawerPaper,
+          paper: {classes}.drawerPaper,
         }}
       >
         <Toolbar />
-        <div className={classes.drawerContainer}>
+        <div className={{classes}.drawerContainer}>
           <List>
             {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
               <ListItem button key={text}>
