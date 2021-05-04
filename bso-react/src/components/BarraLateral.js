@@ -14,27 +14,18 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { ThemeProvider, createMuiTheme, useTheme } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
-  drawer: {
-    zIndex: 1200
-  }
-}))
 
-export default function BarraLateral({theme}) {
-  
-  const classes = useStyles()
+export default function BarraLateral() {
 
   return (
     
     <Drawer
-        className={classes.drawer}
+        
         variant="permanent"
-        classes={{
-          paper: {theme}.drawerPaper,
-        }}
+        
       >
         <Toolbar />
-        <div className={{theme}.drawerContainer}>
+        <div >
           <List>
             {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
               <ListItem button key={text}>
@@ -54,6 +45,7 @@ export default function BarraLateral({theme}) {
           </List>
         </div>
       </Drawer>
+      
       
   );
 }

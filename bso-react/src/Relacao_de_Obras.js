@@ -1,17 +1,8 @@
-import { Grid } from '@material-ui/core';
 import React from 'react'
-import BarraTopo from './components/BarraTopo';
-import BotaoSimples from './components/BotaoSimples';
-import Grade from './components/Grade';
-import BarraLateral from './components/BarraLateral';
-import {Switch, Route, Link} from 'react-router-dom';
-//import Home from './paginas/Home';
-import config from './paginas/config';
+import {Switch, Route} from 'react-router-dom';
 import Obra from './paginas/obra.js';
 import Home from './paginas/home.js';
-import {generatePath} from 'react-router';
-import { makeStyles } from '@material-ui/core/styles';
-import { ThemeProvider, createMuiTheme, useTheme } from '@material-ui/core';
+import { ThemeProvider} from '@material-ui/core';
 
 let obras = [
     {
@@ -55,29 +46,16 @@ export default function Relacao_de_Obras({theme}) {
     return (
       <ThemeProvider theme={theme}>
         <Switch>
-            <Route exact path='/' render={(props) => <Home {...props} nome='Relação de Obras' theme={theme} />}>
-                
-            </Route>
-
-            <Route exact path='/config' component={config}>
-                <BarraTopo/ > 
-                <img src='logo192.png'></img>
-            </Route>
-
+            <Route exact path='/' render={(props) => <Home {...props} nome='Relação de Obras' obras={obras}/>}></Route>
             <Route exact path='/obra' render={(props) => <Obra {...props} nome='Teste' />}>
                 
             </Route>
-            {
+                {
                   obras.map((item, index) => (
-
-
                     rota = item.endereco,
-
-
-                    <Route exact path={rota} render={(props) => <Obra {...props} nome={item.titulo} />}></Route>
-                    
+                    <Route exact path={rota} render={(props) => <Obra {...props} nome={item.titulo} />}></Route>      
                   ))
-              }
+                }
         </Switch>
         </ThemeProvider>
     )

@@ -5,6 +5,8 @@ import { BrowserRouter, Link, Route, Switch} from 'react-router-dom';
 import { Rotate90DegreesCcw } from '@material-ui/icons';
 import React from 'react'
 import ReactDOM from 'react-dom';
+import BarraLateral from './components/BarraLateral';
+import BarraTopo from './components/BarraTopo';
 
 
 
@@ -28,12 +30,6 @@ function App() {
       appBar: 1500,
       drawer: 1200,
     },
-    appBar: {
-      zIndex: 1500
-    },
-    drawer: {
-      zIndex: 1200
-    }
   });
 
 
@@ -46,7 +42,6 @@ function App() {
         </div>
       </ThemeProvider>
     </BrowserRouter>
-    
   );
 }
 

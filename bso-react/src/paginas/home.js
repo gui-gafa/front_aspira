@@ -1,18 +1,18 @@
 import React from 'react';
 import BarraTopo from '../components/BarraTopo';
 import BarraLateral from '../components/BarraLateral';
-import { ThemeProvider, createMuiTheme, makeStyles, useTheme} from '@material-ui/core'
-import {Switch, Route, Link} from 'react-router-dom';
+import Grade from '../components/Grade';
 
-const Home = ({nome}, {theme}) => {
+const Home = ({nome},{obras}) => {
     return (
 
-        <ThemeProvider theme={theme}>
+        
             <div>
-                <BarraTopo nome={nome} theme={theme}></BarraTopo>
-                <BarraLateral theme ={theme}></BarraLateral>
+                <BarraTopo nome={nome} ></BarraTopo>
+                <BarraLateral ></BarraLateral>
+                <Grade obras={obras} ></Grade>
             </div>
-        </ThemeProvider>
+        
             
             
         
