@@ -17,7 +17,7 @@ export default function BotaoSimples({nome}) {
   return (
     <div className={classes.root}>
       
-        <Link to='/config'style={{ textDecoration: 'none'}}  >
+        <Link to='/config' style={{ textDecoration: 'none'}} >
           {nome}
         </Link>
     </div>
@@ -25,7 +25,7 @@ export default function BotaoSimples({nome}) {
 
 
 
-  
+
 
 
 }

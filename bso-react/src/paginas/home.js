@@ -4,15 +4,15 @@ import BarraLateral from '../components/BarraLateral';
 import { ThemeProvider, createMuiTheme, makeStyles, useTheme} from '@material-ui/core'
 import {Switch, Route, Link} from 'react-router-dom';
 
-const Home = ({nome}, {classes}) => {
+const Home = ({nome}, {theme}) => {
     return (
 
-        
+        <ThemeProvider theme={theme}>
             <div>
-                <BarraLateral classes ={classes}></BarraLateral>
-                <BarraTopo nome={nome} classes={classes}></BarraTopo>
-                
+                <BarraTopo nome={nome} theme={theme}></BarraTopo>
+                <BarraLateral theme ={theme}></BarraLateral>
             </div>
+        </ThemeProvider>
             
             
         

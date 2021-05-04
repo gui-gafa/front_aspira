@@ -10,11 +10,6 @@ import ReactDOM from 'react-dom';
 
 //makeStyles cria um objeto de estilos pra usar dentro dos elementos
 //bom pra estilar o conteúdo no próprio arquivo em vez de precisar de um .css
-const useStyles = makeStyles({
-  padrao: {
-    background: 'ff0000',
-  }
-});
 
 function App() {
   const theme = createMuiTheme({
@@ -27,16 +22,21 @@ function App() {
       },
       secondary: {
         main : '#ff0000'
-      },
+      },  
+    },
     zIndex: {
-      appBar: 1300,
-      drawer: 1200
-    },  
+      appBar: 1500,
+      drawer: 1200,
+    },
+    appBar: {
+      zIndex: 1500
+    },
+    drawer: {
+      zIndex: 1200
     }
-
   });
 
-  const classes = useStyles();
+
 
   return (
     <BrowserRouter>

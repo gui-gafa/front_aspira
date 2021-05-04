@@ -11,6 +11,7 @@ import Obra from './paginas/obra.js';
 import Home from './paginas/home.js';
 import {generatePath} from 'react-router';
 import { makeStyles } from '@material-ui/core/styles';
+import { ThemeProvider, createMuiTheme, useTheme } from '@material-ui/core';
 
 let obras = [
     {
@@ -48,50 +49,13 @@ let obras = [
 
 let rota = 'texto';
 
-
-const drawerWidth = 10000;
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-      },
-      appBar: {
-        zIndex: theme.zIndex.drawer + 1,
-      },
-      drawer: {
-        width: drawerWidth,
-        flexShrink: 0,
-      },
-      drawerPaper: {
-        width: drawerWidth,
-      },
-      drawerContainer: {
-        overflow: 'auto',
-      },
-      content: {
-        flexGrow: 1,
-        padding: theme.spacing(3),
-      },
-      menuButton: {
-        marginRight: theme.spacing(2),
-      },
-      title: {
-        flexGrow: 1,
-      },
-      grow: {
-          flexGrow: 1
-      },
-}));
-
-
 export default function Relacao_de_Obras({theme}) {
-    
-    const classes = useStyles();
     
     //exact serve pra só funcionar o link se o endereço estiver exatamente igual
     return (
+      <ThemeProvider theme={theme}>
         <Switch>
-            <Route exact path='/' render={(props) => <Home {...props} nome='Relação de Obras' classes={classes} />}>
+            <Route exact path='/' render={(props) => <Home {...props} nome='Relação de Obras' theme={theme} />}>
                 
             </Route>
 
@@ -115,5 +79,6 @@ export default function Relacao_de_Obras({theme}) {
                   ))
               }
         </Switch>
+        </ThemeProvider>
     )
 }
