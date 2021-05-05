@@ -9,8 +9,41 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import {Link} from 'react-router-dom';
+import Box from '@material-ui/core/Box';
+import Toolbar from '@material-ui/core/Toolbar';
 
-
+let obras1 = [
+  {
+     id: "0",
+     endereco: "/obra/0",
+     titulo: "Novo H8",
+     descricao: "Reforma do alojamento estudantil dos alunos do ITA.",
+     cidade: "São José dos Campos-SP",
+     cliente: "ITA",
+     fonte: "MEC",
+     foto: "/novo_h8.PNG",
+  },
+  {
+      id: "1",
+      endereco: "/obra/1",
+      titulo: "Subestação",
+      descricao: "Reforma da subestação de energia do DCTA.",
+      cidade: "São José dos Campos-SP",
+      cliente: "GAP-SJ",
+      fonte: "EMAER/INPE",
+      foto: "/predio_icea.PNG",
+  },
+  {
+      id: "2",
+      endereco: "/obra/2",
+      titulo: "Rede de Água F2",
+      descricao: "Reforma e acompanhamento da rede de água do DCTA.",
+      cidade: "São José dos Campos-SP",
+      cliente: "GAP-SJ",
+      fonte: "EMAER",
+      foto: "/rede_de_agua.PNG",
+  }
+];
 
 const useStyles = makeStyles({
     root: {
@@ -22,14 +55,16 @@ const useStyles = makeStyles({
     },
   });
 
-export default function Grade({obras}) {
+export default function Grade(props) {
     const classes = useStyles();
     
+    
     return (
-      <div>
+       <Box >
+          <Toolbar/ >
           <Grid container spacing='2'>
               {
-                  obras.map((item, index) => (
+                  obras1.map((item, index) => (
                     <Grid item>
                         <Card className={classes.root} >
                             <CardActionArea>
@@ -58,9 +93,8 @@ export default function Grade({obras}) {
                     </Grid>
                   ))
               }
-
-          </Grid>
-        
-      </div>
+          </Grid>    
+        </Box>
     );
   }
+

@@ -13,7 +13,7 @@ let obras = [
        cidade: "São José dos Campos-SP",
        cliente: "ITA",
        fonte: "MEC",
-       foto: "/novo_h8.PNG"
+       foto: "/novo_h8.PNG",
     },
     {
         id: "1",
@@ -23,9 +23,9 @@ let obras = [
         cidade: "São José dos Campos-SP",
         cliente: "GAP-SJ",
         fonte: "EMAER/INPE",
-        foto: "/predio_icea.PNG"
-     },
-     {
+        foto: "/predio_icea.PNG",
+    },
+    {
         id: "2",
         endereco: "/obra/2",
         titulo: "Rede de Água F2",
@@ -33,10 +33,14 @@ let obras = [
         cidade: "São José dos Campos-SP",
         cliente: "GAP-SJ",
         fonte: "EMAER",
-        foto: "/rede_de_agua.PNG"
-     },
-
+        foto: "/rede_de_agua.PNG",
+    }
 ];
+
+let teste = ["ana", "maria", "Sofia",]
+
+console.log({obras})
+console.log(typeof({teste}))
 
 let rota = 'texto';
 
@@ -47,6 +51,9 @@ export default function Relacao_de_Obras({theme}) {
       <ThemeProvider theme={theme}>
         <Switch>
             <Route exact path='/' render={(props) => <Home {...props} nome='Relação de Obras' obras={obras}/>}></Route>
+            {/*<Route exact path='/'>
+              <Home> nome="Relação de Obras" obras={obras}</Home>
+            </Route>*/}
             <Route exact path='/obra' render={(props) => <Obra {...props} nome='Teste' />}>
                 
             </Route>
