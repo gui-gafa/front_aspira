@@ -27,8 +27,9 @@ function App() {
       },  
     },
     zIndex: {
-      appBar: 1500,
-      drawer: 1200,
+      appBar: -11,
+      drawer: -13,
+      box: -15,
     },
   });
 

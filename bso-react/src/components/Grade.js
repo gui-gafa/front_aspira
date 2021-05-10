@@ -11,6 +11,7 @@ import Button from '@material-ui/core/Button';
 import {Link} from 'react-router-dom';
 import Box from '@material-ui/core/Box';
 import Toolbar from '@material-ui/core/Toolbar';
+import { positions } from '@material-ui/system';
 
 let obras1 = [
   {
@@ -53,6 +54,11 @@ const useStyles = makeStyles({
     media: {
       height: 220,
     },
+    box: {
+      /*paddingLeft de 255 porque a largura da barra lateral é de 240*/
+      paddingLeft: 255,
+      paddingTop: 15,
+    }
   });
 
 export default function Grade(props) {
@@ -60,9 +66,9 @@ export default function Grade(props) {
     
     
     return (
-       <Box >
+       <Box className={classes.box}>
           <Toolbar/ >
-          <Grid container spacing='2'>
+          <Grid container spacing='3'>
               {
                   obras1.map((item, index) => (
                     <Grid item>
