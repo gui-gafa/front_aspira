@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 
 import React from 'react';
-/*import ImageList from '@material-ui/core/ImageList';*/
-/*import { ImageList } from '@material-ui/core';*/
+import ImageList from '@material-ui/core/ImageList';
+import { ImageList } from '@material-ui/core';
 import ImageListItem from '@material-ui/core/ImageListItem';
 
 export default function Fotos() {
