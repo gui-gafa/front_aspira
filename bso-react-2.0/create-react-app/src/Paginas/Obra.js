@@ -3,10 +3,20 @@ import PropTypes from 'prop-types';
 import { createMuiTheme, ThemeProvider, withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 import BarraLateral from '../Componentes/BarraLateral';
 import BarraTopo from '../Componentes/BarraTopo';
+import Fotos from '../Componentes/Fotos';
+import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
+import FeitonaSemana from '../Componentes/FeitonaSemana';
+import Alertas from '../Componentes/Alertas';
+import {
+  Box,
+  Container,
+  Grid,
+  Icon,
+} from '@material-ui/core';
+
 
 function Copyright() {
   return (
@@ -47,6 +57,14 @@ let theme = createMuiTheme({
   mixins: {
     toolbar: {
       minHeight: 48,
+    },
+    overrides: {
+      MuiCard: {
+        root: {
+          fontSize: '1rem',
+          background: '#63ccff',
+        },
+      },
     },
   },
 });
@@ -186,9 +204,41 @@ function Obra(props) {
           </Hidden>
         </nav>
         <div className={classes.app}>
-          <BarraTopo onDrawerToggle={handleDrawerToggle} nome='Início'/>
+          <BarraTopo onDrawerToggle={handleDrawerToggle} nome={obra.titulo}/>
           <main className={classes.main}>
-                teste
+            <Box
+              sx={{
+                minHeight: '100%',
+                py: 3
+              }}
+            >
+              <Container maxWidth={false}>
+                <Grid
+                  container
+                  spacing={3}
+                >
+                  <Grid
+                    item
+                    lg={8}
+                    md={12}
+                    xl={9}
+                    xs={12}
+                  >
+                    <FeitonaSemana />
+                  </Grid>
+                  <Grid
+                    item
+                    lg={4}
+                    md={6}
+                    xl={3}
+                    xs={12}
+                  >
+                    <Alertas sx={{ height: '100%' }} />
+                  </Grid>
+                  <Fotos fotos={obra.fotos}></Fotos>
+                </Grid>
+              </Container>
+            </Box>  
           </main>
           <footer className={classes.footer}>
             <Copyright />

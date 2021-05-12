@@ -16,12 +16,46 @@ let obras = [
      cidade: "São José dos Campos-SP",
      cliente: "ITA",
      fonte: "MEC",
-     fotos: {
-      foto0: "/novo_h8.PNG",
-      foto1: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-      foto2: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+     fotos: [
+      {
+        img: "/novo_h8.PNG",
+        data: '13/05/2021',
+      },
+       {
+         img: "/rede_de_agua.PNG",
+         data: '11/05/2021',
+       },
+       {
+        img: "/predio_icea.PNG",
+        data: '12/05/2021',
+      },
+      {
+        img: "/novo_h8.PNG",
+        data: '13/05/2021',
+      },
+       {
+         img: "/rede_de_agua.PNG",
+         data: '11/05/2021',
+       },
+       {
+        img: "/predio_icea.PNG",
+        data: '12/05/2021',
+      },
+      {
+        img: "/novo_h8.PNG",
+        data: '13/05/2021',
+      },
+       {
+         img: "/rede_de_agua.PNG",
+         data: '11/05/2021',
+       },
+       {
+        img: "/predio_icea.PNG",
+        data: '12/05/2021',
+      },
+      ] 
     },
-  },
+
   {
       id: "1",
       endereco: "/Obras/1",
@@ -30,12 +64,46 @@ let obras = [
       cidade: "São José dos Campos-SP",
       cliente: "GAP-SJ",
       fonte: "EMAER/INPE",
-      fotos: {
-        foto0: "/predio_icea.PNG",
-        foto1: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-        foto2: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-      },
+      fotos: [
+        {
+          img: "/predio_icea.PNG",
+          data: '13/05/2021',
+        },
+         {
+           img: "/novo_h8.PNG",
+           data: '11/05/2021',
+         },
+         {
+          img: "/rede_de_agua.PNG",
+          data: '12/05/2021',
+        },
+        {
+          img: "/novo_h8.PNG",
+          data: '13/05/2021',
+        },
+         {
+           img: "/rede_de_agua.PNG",
+           data: '11/05/2021',
+         },
+         {
+          img: "/predio_icea.PNG",
+          data: '12/05/2021',
+        },
+        {
+          img: "/novo_h8.PNG",
+          data: '13/05/2021',
+        },
+         {
+           img: "/rede_de_agua.PNG",
+           data: '11/05/2021',
+         },
+         {
+          img: "/predio_icea.PNG",
+          data: '12/05/2021',
+        },
+      ]
   },
+
   {
       id: "2",
       endereco: "/Obras/2",
@@ -44,12 +112,44 @@ let obras = [
       cidade: "São José dos Campos-SP",
       cliente: "GAP-SJ",
       fonte: "EMAER",
-      fotos: {
-        foto0: "/rede_de_agua.PNG",
-        foto1: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-        foto2: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-      },
-      
+      fotos: [
+        {
+          img: "/rede_de_agua.PNG",
+          data: '13/05/2021',
+        },
+         {
+           img: "/predio_icea.PNG",
+           data: '11/05/2021',
+         },
+         {
+          img: "/novo_h8.PNG",
+          data: '12/05/2021',
+        }, 
+        {
+          img: "/novo_h8.PNG",
+          data: '13/05/2021',
+        },
+         {
+           img: "/rede_de_agua.PNG",
+           data: '11/05/2021',
+         },
+         {
+          img: "/predio_icea.PNG",
+          data: '12/05/2021',
+        },
+        {
+          img: "/novo_h8.PNG",
+          data: '13/05/2021',
+        },
+         {
+           img: "/rede_de_agua.PNG",
+           data: '11/05/2021',
+         },
+         {
+          img: "/predio_icea.PNG",
+          data: '12/05/2021',
+        },
+      ]   
   }
 ];
 
