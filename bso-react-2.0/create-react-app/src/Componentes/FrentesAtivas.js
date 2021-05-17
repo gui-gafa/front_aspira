@@ -43,7 +43,7 @@ const products = [
   }
 ];
 
-const FeitonaSemana = (props) => (
+const FrentesAtivas = (props) => (
   <Card {...props}>
     <CardHeader
       subtitle={`${products.length} in total`}
@@ -90,4 +90,4 @@ const FeitonaSemana = (props) => (
   </Card>
 );
 
-export default FeitonaSemana;
+export default FrentesAtivas;

@@ -11,7 +11,6 @@ import Button from '@material-ui/core/Button';
 import {Link} from 'react-router-dom';
 import Box from '@material-ui/core/Box';
 import Toolbar from '@material-ui/core/Toolbar';
-import { positions } from '@material-ui/system';
 
 let obras1 = [
   {

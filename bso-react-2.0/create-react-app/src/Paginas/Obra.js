@@ -8,14 +8,24 @@ import BarraTopo from '../Componentes/BarraTopo';
 import Fotos from '../Componentes/Fotos';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-import FeitonaSemana from '../Componentes/FeitonaSemana';
+import FrentesAtivas from '../Componentes/FrentesAtivas';
 import Alertas from '../Componentes/Alertas';
 import {
   Box,
   Container,
   Grid,
   Icon,
+  Card,
+  Table,
+  CardHeader,
+
 } from '@material-ui/core';
+import BugReportIcon from '@material-ui/icons/BugReport';
+import CodeIcon from '@material-ui/icons/Code';
+import CloudIcon from '@material-ui/icons/Cloud';
+import { DriveEtaTwoTone } from '@material-ui/icons';
+import Tabela from '../Componentes/Tabela';
+
 
 
 function Copyright() {
@@ -206,6 +216,8 @@ function Obra(props) {
         <div className={classes.app}>
           <BarraTopo onDrawerToggle={handleDrawerToggle} nome={obra.titulo}/>
           <main className={classes.main}>
+            
+            
             <Box
               sx={{
                 minHeight: '100%',
@@ -224,7 +236,8 @@ function Obra(props) {
                     xl={9}
                     xs={12}
                   >
-                    <FeitonaSemana />
+                    <FrentesAtivas />
+                    <Tabela />
                   </Grid>
                   <Grid
                     item
@@ -234,11 +247,12 @@ function Obra(props) {
                     xs={12}
                   >
                     <Alertas sx={{ height: '100%' }} />
+                    <Tabela/ >
                   </Grid>
                   <Fotos fotos={obra.fotos}></Fotos>
                 </Grid>
               </Container>
-            </Box>  
+            </Box> 
           </main>
           <footer className={classes.footer}>
             <Copyright />
