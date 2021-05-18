@@ -25,6 +25,8 @@ import CodeIcon from '@material-ui/icons/Code';
 import CloudIcon from '@material-ui/icons/Cloud';
 import { DriveEtaTwoTone } from '@material-ui/icons';
 import Tabela from '../Componentes/Tabela';
+import DetalhesProjeto from '../Componentes/DetalhesProjeto';
+import Balanco from '../Componentes/Balanco';
 
 
 
@@ -236,7 +238,8 @@ function Obra(props) {
                     xl={9}
                     xs={12}
                   >
-                    <FrentesAtivas />
+                    
+                    <Balanco/ >
                     <Tabela />
                   </Grid>
                   <Grid
@@ -246,8 +249,7 @@ function Obra(props) {
                     xl={3}
                     xs={12}
                   >
-                    <Alertas sx={{ height: '100%' }} />
-                    <Tabela/ >
+                    <DetalhesProjeto/ >
                   </Grid>
                   <Fotos fotos={obra.fotos}></Fotos>
                 </Grid>

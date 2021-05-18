@@ -42,7 +42,17 @@ export default function Tasks(props) {
         {tasksIndexes.map((value) => (
           <TableRow key={value} className={classes.tableRow}>
             <TableCell className={tableCellClasses}>
-              
+              <Checkbox
+                checked={checked.indexOf(value) !== -1}
+                tabIndex={-1}
+                onClick={() => handleToggle(value)}
+                checkedIcon={<Check className={classes.checkedIcon} />}
+                icon={<Check className={classes.uncheckedIcon} />}
+                classes={{
+                  checked: classes.checked,
+                  root: classes.root,
+                }}
+              />
             </TableCell>
             <TableCell className={tableCellClasses}>{tasks[value]}</TableCell>
             <TableCell className={classes.tableActions}>
