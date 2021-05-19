@@ -11,6 +11,7 @@
   "dependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "^4.11.2",
+    "axios": "^0.21.1",
     "clsx": "latest",
     "material-ui-icons": "*",
     "moment": "^2.29.1",

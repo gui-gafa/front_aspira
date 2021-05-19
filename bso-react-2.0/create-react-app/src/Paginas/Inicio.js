@@ -8,6 +8,15 @@ import Link from '@material-ui/core/Link';
 import BarraLateral from '../Componentes/BarraLateral';
 import BarraTopo from '../Componentes/BarraTopo';
 
+var axios = require('axios');
+
+axios.get("https://api-codcta.herokuapp.com/api/v1/constructions").then(function(dado){
+  console.log(dado);
+  console.log(dado);
+  console.log(dado);
+});
+
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -189,6 +198,8 @@ function Inicio(props) {
           <BarraTopo onDrawerToggle={handleDrawerToggle} nome='Início'/>
           <main className={classes.main}>
             {/*Inserir conteúdo da Home aqui*/}
+
+
           </main>
           <footer className={classes.footer}>
             <Copyright />
