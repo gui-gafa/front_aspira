@@ -7,14 +7,34 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import BarraLateral from '../Componentes/BarraLateral';
 import BarraTopo from '../Componentes/BarraTopo';
+import axios from 'axios';
+import Teste from '../Componentes/Teste';
+import TestePost from '../Componentes/TestePost';
+import TesteDelete from '../Componentes/TesteDelete';
 
-var axios = require('axios');
 
-axios.get("https://api-codcta.herokuapp.com/api/v1/constructions").then(function(dado){
-  console.log(dado);
-  console.log(dado);
-  console.log(dado);
-});
+
+//var axios = require('axios');
+
+// const api = axios.create(
+// 'https://api-codcta.herokuapp.com/api/v1'
+// )
+
+// const getStaticPaths: GetStaticPaths = async () => {
+// const { data } = await api.get('constructions', {
+  
+// }).then(console.log(data));
+
+//const { data } = await api.get('constructions', {
+  
+//}).
+
+// axios.get("https://api-codcta.herokuapp.com/api/v1/constructions").then(function(dado){
+//   console.log(dado);
+//   console.log(dado);
+//   console.log(dado);
+// });
+
 
 
 function Copyright() {
@@ -198,7 +218,9 @@ function Inicio(props) {
           <BarraTopo onDrawerToggle={handleDrawerToggle} nome='Início'/>
           <main className={classes.main}>
             {/*Inserir conteúdo da Home aqui*/}
-
+            <Teste/ >
+            <TestePost/ >
+            <TesteDelete/ >
 
           </main>
           <footer className={classes.footer}>

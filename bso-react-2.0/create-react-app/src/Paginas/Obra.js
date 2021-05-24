@@ -251,8 +251,10 @@ function Obra(props) {
                   >
                     <DetalhesProjeto/ >
                   </Grid>
-                  <Fotos fotos={obra.fotos}></Fotos>
-                </Grid>
+                  <Box>
+                    <Fotos fotos={obra.fotos}></Fotos>
+                  </Box>
+                </Grid> 
               </Container>
             </Box> 
           </main>
