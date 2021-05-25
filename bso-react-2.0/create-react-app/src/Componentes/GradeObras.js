@@ -18,6 +18,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 let obras1 = [
     {
@@ -51,6 +52,9 @@ let obras1 = [
         foto: "/rede_de_agua.PNG",
     }
   ];
+
+
+
 
 const styles = (theme) => ({
   paper: {
@@ -91,8 +95,25 @@ function GradeObras(props) {
   const { classes } = props;
   
 
+  // state = {
+  //   teste: []
+  // }
+
+
+    
+
+  
+      
   return (
     <div>
+      axios.get(`https://api-codcta.herokuapp.com/api/v1/constructions`, {headers:  {'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*'}})
+      .then(res => {
+        const joia = res.data;
+      })
+
+        
+
+
         <Paper className={classes.paper}>
         <AppBar className={classes.searchBar} position="static" color="default" elevation={0}>
             <Toolbar>
@@ -130,6 +151,7 @@ function GradeObras(props) {
             </Typography>
                 </div>*/}
         </Paper>
+        
         <Grid container spacing='3' className={classes.grid}>
         {
             obras1.map((item, index) => (
@@ -161,6 +183,12 @@ function GradeObras(props) {
             </Grid>
             ))
         }
+         {
+            joia.map((item, index) => (
+                //<h1>{item.object_name}</h1>
+                console.log(item.object_name)
+            ))
+        } 
         </Grid>
     </div>
   );

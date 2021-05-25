@@ -11,6 +11,9 @@ import axios from 'axios';
 import Teste from '../Componentes/Teste';
 import TestePost from '../Componentes/TestePost';
 import TesteDelete from '../Componentes/TesteDelete';
+import PersonList from '../Componentes/Teste';
+
+
 
 
 

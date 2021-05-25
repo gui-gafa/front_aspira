@@ -21,6 +21,11 @@ export default class PersonList extends React.Component {
 //     }
 // })
 
+  // render() {
+  //   return this.state.persons;
+  // }
+//}
+
   render() {
     return (
       <ul>
