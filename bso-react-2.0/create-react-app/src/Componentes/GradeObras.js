@@ -53,7 +53,7 @@ let obras1 = [
     }
   ];
 
-
+  
 
 
 const styles = (theme) => ({
@@ -91,29 +91,22 @@ const styles = (theme) => ({
   }
 });
 
+
+
+
+
+
+
 function GradeObras(props) {
   const { classes } = props;
   
-
-  // state = {
-  //   teste: []
-  // }
-
-
+  
     
-
+  
   
       
   return (
     <div>
-      axios.get(`https://api-codcta.herokuapp.com/api/v1/constructions`, {headers:  {'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*'}})
-      .then(res => {
-        const joia = res.data;
-      })
-
-        
-
-
         <Paper className={classes.paper}>
         <AppBar className={classes.searchBar} position="static" color="default" elevation={0}>
             <Toolbar>
@@ -182,13 +175,38 @@ function GradeObras(props) {
                 </Card>
             </Grid>
             ))
-        }
-         {
-            joia.map((item, index) => (
-                //<h1>{item.object_name}</h1>
-                console.log(item.object_name)
-            ))
         } 
+        </Grid>
+        
+        
+        <Grid container spacing='3' className={classes.grid}>
+        {/* {
+            dados.map((item, index) => (
+            <Grid item>
+                <Card className={classes.root} >
+                    <CardActionArea>
+                        <CardMedia
+                        className={classes.media}
+                        title={item.object_name}
+                        />
+                        <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            {item.object_name}
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary" component="p">
+                            {item.object_name}
+                        </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                    <CardActions > 
+                        <Button size="small" color="primary">
+                            detalhes   
+                        </Button>
+                    </CardActions>
+                </Card>
+            </Grid>
+            ))
+        } */}
         </Grid>
     </div>
   );
