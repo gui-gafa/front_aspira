@@ -8,6 +8,7 @@ import Link from '@material-ui/core/Link';
 import BarraLateral from '../Componentes/BarraLateral';
 import BarraTopo from '../Componentes/BarraTopo';
 import GradeObras from '../Componentes/GradeObras';
+import axios from 'axios';
 
 function Copyright() {
   return (
@@ -160,6 +161,27 @@ const styles = {
     background: '#eaeff1',
   },
 };
+
+
+// componentDidMount() {
+//   this.renderPosts();
+// }
+
+// renderPosts = async() => {
+//   try {
+//     const res = await axios.get(`https://api-codcta.herokuapp.com/api/v1/constructions`, {headers:  {'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*'}})
+//     const posts = res.data;
+
+//     // this will re render the view with new data
+//     this.setState({
+//       Posts: posts
+//     });
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+
+
 
 function RelacaodeObras(props) {
   const { classes } = props;

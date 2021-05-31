@@ -91,19 +91,13 @@ const styles = (theme) => ({
   }
 });
 
+const teste = [];
 
 
 
 
-
-
-function GradeObras(props) {
+ function GradeObras(props) {
   const { classes } = props;
-  
-  
-    
-  
-  
       
   return (
     <div>
