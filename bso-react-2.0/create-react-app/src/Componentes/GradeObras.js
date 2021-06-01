@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -19,6 +19,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+
 
 let obras1 = [
     {
@@ -79,26 +80,46 @@ const styles = (theme) => ({
   },
   root: {
     maxWidth: 345,
-    height: 400
+    height: 400,
+    width: 345,
   },
   media: {
     height: 220,
+    fontSize: 400,
   },
   grid: {
     /*paddingLeft de 255 porque a largura da barra lateral é de 240*/
     paddingLeft: 0,
     paddingTop: 25,
-  }
-});
+  },
+  titulo: {
+    height: 130,
+  },
 
-const teste = [];
+});
 
 
 
 
  function GradeObras(props) {
   const { classes } = props;
+  const [obras, setObra] = useState([]);
+  const [busca, setBusca] = useState('NOVO TPS');
+
+    useEffect(() => {
+      async function getData(){
+        const res = await axios.get(`https://api-codcta.herokuapp.com/api/v1/constructions`, {headers:  {'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*'}});
+        setObra(res.data)
+      }
       
+      
+      getData();
+    }, []);
+
+
+  console.log({obras})
+  console.log({busca})
+
   return (
     <div>
         <Paper className={classes.paper}>
@@ -116,11 +137,15 @@ const teste = [];
                     disableUnderline: true,
                     className: classes.searchInput,
                     }}
+                    onChange={(event, index, value) =>
+                      setBusca(event.target.value)
+                    }
                 />
+                
                 </Grid>
                 <Grid item>
                 <Button variant="contained" color="primary" className={classes.addUser}>
-                    Buscar
+                    Buscar {busca}
                 </Button>
                 <Tooltip title="Reload">
                     <IconButton>
@@ -142,6 +167,7 @@ const teste = [];
         <Grid container spacing='3' className={classes.grid}>
         {
             obras1.map((item, index) => (
+            
             <Grid item>
                 <Card className={classes.root} >
                     <CardActionArea>
@@ -150,8 +176,8 @@ const teste = [];
                         image={item.foto}
                         title={item.titulo}
                         />
-                        <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
+                        <CardContent className={classes.titulo}>
+                        <Typography gutterBottom variant="h6" component="h2">
                             {item.titulo}
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
@@ -171,36 +197,38 @@ const teste = [];
             ))
         } 
         </Grid>
-        
-        
+
         <Grid container spacing='3' className={classes.grid}>
-        {/* {
-            dados.map((item, index) => (
+        {
+            obras.map((item, index) => (
             <Grid item>
                 <Card className={classes.root} >
                     <CardActionArea>
                         <CardMedia
                         className={classes.media}
+                        image="/obras-598x390.jpg"
                         title={item.object_name}
                         />
-                        <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
+                        <CardContent className={classes.titulo}>
+                        <Typography gutterBottom variant="h6" component="h2">
                             {item.object_name}
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            {item.object_name}
+                            {item.status}
                         </Typography>
                         </CardContent>
                     </CardActionArea>
-                    <CardActions > 
+                    <CardActions align="flex-end"> 
                         <Button size="small" color="primary">
-                            detalhes   
+                            <Link to="/Obras/2" style={{color: '#5d8aa8', textDecoration: 'none'}}>
+                            detalhes
+                            </Link>
                         </Button>
                     </CardActions>
                 </Card>
             </Grid>
-            ))
-        } */}
+            )).filter((obj) => obj.object_name == busca)
+        } 
         </Grid>
     </div>
   );
