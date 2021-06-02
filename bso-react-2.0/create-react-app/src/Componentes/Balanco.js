@@ -29,17 +29,16 @@ import CardIcon from "../components/Card/CardIcon.js";
 import Danger from "../components/Typography/Danger.js";
 import DoneAllIcon from '@material-ui/icons/DoneAll';
 import WorkIcon from '@material-ui/icons/Work';
-
 import Icon from "@material-ui/core/Icon";
 import Grid from '@material-ui/core/Grid';
-
 import { bugs, website, server } from "../variables/general.js";
 import styles from "../assets/jss/material-dashboard-react/views/dashboardStyle.js";
 
 const useStyles = makeStyles(styles);
 
-export default function Balanco() {
+export default function Balanco(props) {
 
+  const { obra } = props;
   const classes = useStyles();
 
   return (

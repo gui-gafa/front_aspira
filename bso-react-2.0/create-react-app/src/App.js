@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
+import axios from 'axios';
 import Inicio from './Paginas/Inicio';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import RelacaodeObras from './Paginas/RelacaodeObras';
 import Obra from './Paginas/Obra';
 
 
-let obras = [
+let obras2 = [
   {
      id: "0",
      endereco: "/Obras/0",
@@ -169,6 +170,24 @@ function Copyright() {
 let rota = '/Obras/0'
 
 export default function App() {
+
+  const [obras, setObra] = useState([]);
+  const [medidas, setMedida] = useState([]);
+
+    useEffect(() => {
+      async function getData(){
+        const res = await axios.get(`https://api-codcta.herokuapp.com/api/v1/constructions`, {headers:  {'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*'}});
+        setObra(res.data)
+        const res2 = await axios.get(`https://api-codcta.herokuapp.com/api/v1/executed_measures`, {headers:  {'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*'}});
+        setMedida(res2.data)
+      }
+      
+      
+      getData();
+    }, []);
+
+
+  console.log(medidas.construction_id)  
   return (
     <BrowserRouter>
       <Switch>
@@ -182,8 +201,7 @@ export default function App() {
             </Route>*/}
             {
               obras.map((item, index) => (
-                rota = item.endereco,
-                <Route exact path={rota} render={(props) => <Obra {...props} obra={item} />}></Route>      
+                <Route exact path={`/Obras/${item.id}`} render={(props) => <Obra {...props} obra={item} />}></Route>      
               ))
             }
       </Switch>

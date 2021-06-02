@@ -216,7 +216,7 @@ function Obra(props) {
           </Hidden>
         </nav>
         <div className={classes.app}>
-          <BarraTopo onDrawerToggle={handleDrawerToggle} nome={obra.titulo}/>
+          <BarraTopo onDrawerToggle={handleDrawerToggle} nome={obra.object_name}/>
           <main className={classes.main}>
             
             
@@ -239,7 +239,7 @@ function Obra(props) {
                     xs={12}
                   >
                     
-                    <Balanco/ >
+                    <Balanco {...props} obra={obra}/>
                     <Tabela />
                   </Grid>
                   <Grid
@@ -252,7 +252,7 @@ function Obra(props) {
                     <DetalhesProjeto/ >
                   </Grid>
                   <Box>
-                    <Fotos fotos={obra.fotos}></Fotos>
+                    {/*<Fotos fotos={obra.fotos}></Fotos>*/}
                   </Box>
                 </Grid> 
               </Container>

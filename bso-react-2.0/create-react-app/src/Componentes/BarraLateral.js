@@ -84,6 +84,8 @@ const styles = (theme) => ({
   },
 });
 
+
+
 function BarraLateral(props) {
   const { classes, ...other } = props;
 
@@ -111,6 +113,7 @@ function BarraLateral(props) {
           </ListItemText>
         </ListItem>
         {categories.map(({ id, children }) => (
+          
           <React.Fragment key={id}>
             <ListItem className={classes.categoryHeader}>
               <ListItemText
@@ -122,6 +125,7 @@ function BarraLateral(props) {
               </ListItemText>
             </ListItem>
             {children.map(({ id: childId, icon, active }) => (
+              
               <ListItem
                 key={childId}
                 button
@@ -133,7 +137,8 @@ function BarraLateral(props) {
                     primary: classes.itemPrimary,
                   }}
                 >
-                    <Link to={childId} style={{color: '#5d8aa8', textDecoration: 'none'}}>
+                  
+                    <Link to= {`/${childId}`} style={{color: '#5d8aa8', textDecoration: 'none'}}>
                         {childId}
                     </Link>
                   

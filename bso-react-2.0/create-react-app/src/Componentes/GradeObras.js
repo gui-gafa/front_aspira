@@ -104,7 +104,7 @@ const styles = (theme) => ({
  function GradeObras(props) {
   const { classes } = props;
   const [obras, setObra] = useState([]);
-  const [busca, setBusca] = useState('NOVO TPS');
+  const [busca, setBusca] = useState('');
 
     useEffect(() => {
       async function getData(){
@@ -115,10 +115,7 @@ const styles = (theme) => ({
       
       getData();
     }, []);
-
-
-  console.log({obras})
-  console.log({busca})
+   
 
   return (
     <div>
@@ -145,7 +142,7 @@ const styles = (theme) => ({
                 </Grid>
                 <Grid item>
                 <Button variant="contained" color="primary" className={classes.addUser}>
-                    Buscar {busca}
+                    Buscar
                 </Button>
                 <Tooltip title="Reload">
                     <IconButton>
@@ -164,7 +161,7 @@ const styles = (theme) => ({
                 </div>*/}
         </Paper>
         
-        <Grid container spacing='3' className={classes.grid}>
+        {/*<Grid container spacing='3' className={classes.grid}>
         {
             obras1.map((item, index) => (
             
@@ -197,10 +194,17 @@ const styles = (theme) => ({
             ))
         } 
         </Grid>
+      */}
 
         <Grid container spacing='3' className={classes.grid}>
         {
-            obras.map((item, index) => (
+            obras.filter((obj) => {
+              if (busca == '') {
+                return obj
+              } else if (obj.object_name.toUpperCase().includes(busca.toUpperCase())) {
+                return obj
+              }
+            }).map((item, index) => (
             <Grid item>
                 <Card className={classes.root} >
                     <CardActionArea>
@@ -220,14 +224,15 @@ const styles = (theme) => ({
                     </CardActionArea>
                     <CardActions align="flex-end"> 
                         <Button size="small" color="primary">
-                            <Link to="/Obras/2" style={{color: '#5d8aa8', textDecoration: 'none'}}>
+                            <Link to={`/Obras/${item.id}`} style={{color: '#5d8aa8', textDecoration: 'none'}}>
                             detalhes
                             </Link>
                         </Button>
                     </CardActions>
                 </Card>
             </Grid>
-            )).filter((obj) => obj.object_name == busca)
+            
+            ))
         } 
         </Grid>
     </div>
