@@ -191,12 +191,14 @@ const styles = {
 };
 
 function Obra(props) {
-  const { classes, obra} = props;
+  const { classes, obra, medida} = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+
+  
 
   return (
     <ThemeProvider theme={theme}>
@@ -253,6 +255,8 @@ function Obra(props) {
                   </Grid>
                   <Box>
                     {/*<Fotos fotos={obra.fotos}></Fotos>*/}
+                    Mostrar algo
+                    {medida.construction_id}
                   </Box>
                 </Grid> 
               </Container>

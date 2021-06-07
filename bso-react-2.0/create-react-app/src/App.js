@@ -167,7 +167,9 @@ function Copyright() {
   );
 }
 
-let rota = '/Obras/0'
+let date1 = new Date("1000-05-11"); 
+let em = [    ];
+let date2 = [];
 
 export default function App() {
 
@@ -180,14 +182,27 @@ export default function App() {
         setObra(res.data)
         const res2 = await axios.get(`https://api-codcta.herokuapp.com/api/v1/executed_measures`, {headers:  {'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*'}});
         setMedida(res2.data)
+        
       }
       
       
       getData();
     }, []);
 
+  
+        // date2 = new Date(medidas[0].date)
+        // console.log(date2)
+        // console.log(typeof medidas[0].date)
+        // console.log(typeof date1)
+        // console.log(typeof obras[0].id)
+        // console.log(typeof medidas[0].construction_id)
+        // console.log(obras[6].id == medidas[0].construction_id)
+        // console.log('resposta5')
+        // date2 = new Date(medidas[0].date)
+        // console.log(date2)
+        // console.log(em.date)
+        // console.log(typeof em.date == typeof date2)
 
-  console.log(medidas.construction_id)  
   return (
     <BrowserRouter>
       <Switch>
@@ -199,9 +214,21 @@ export default function App() {
             {/*<Route exact path='/obra' render={(props) => <Obra {...props} nome='Teste' />}>
                 
             </Route>*/}
+            
             {
               obras.map((item, index) => (
-                <Route exact path={`/Obras/${item.id}`} render={(props) => <Obra {...props} obra={item} />}></Route>      
+                
+                  medidas.map((sub, subindex) => 
+                    {
+                    date2 = new Date(sub.date)
+                    if (sub.construction_id == item.id && date2 > date1) {
+                          console.log('entrou')  
+                          em = sub
+                        }
+                    }
+                  ),
+                
+                <Route exact path={`/Obras/${item.id}`} render={(props) => <Obra {...props} obra={item} medida={em}/>}></Route>      
               ))
             }
       </Switch>
