@@ -170,6 +170,7 @@ function Copyright() {
 let date1 = new Date("1000-05-11"); 
 let em = [    ];
 let date2 = [];
+let ultimos = [];
 
 export default function App() {
 
@@ -217,18 +218,18 @@ export default function App() {
             
             {
               obras.map((item, index) => (
-                
+                  date1 = new Date("1000-05-11"),
                   medidas.map((sub, subindex) => 
                     {
                     date2 = new Date(sub.date)
                     if (sub.construction_id == item.id && date2 > date1) {
-                          console.log('entrou')  
-                          em = sub
+                          ultimos[index] = sub 
+                          date1 = date2
                         }
                     }
+                    //<Route exact path={`/Obras/${item.id}`} render={(props) => <Obra {...props} obra={item} medida={ultimo}/>}></Route>
                   ),
-                
-                <Route exact path={`/Obras/${item.id}`} render={(props) => <Obra {...props} obra={item} medida={em}/>}></Route>      
+               <Route exact path={`/Obras/${item.id}`} render={(props) => <Obra {...props} obra={item} medida={ultimos[index]}/>}></Route>      
               ))
             }
       </Switch>

@@ -38,7 +38,7 @@ const useStyles = makeStyles(styles);
 
 export default function Balanco(props) {
 
-  const { obra } = props;
+  const { obra, medida} = props;
   const classes = useStyles();
 
   return (
@@ -51,7 +51,7 @@ export default function Balanco(props) {
                   <BuildIcon />
                 </CardIcon>
                 <p className={classes.cardCategory}>Empenhado</p>
-                <h3 className={classes.cardTitle}>90%</h3>
+                <h3 className={classes.cardTitle}>Sem dados</h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
@@ -68,7 +68,7 @@ export default function Balanco(props) {
                   <WorkIcon />
                 </CardIcon>
                 <p className={classes.cardCategory}>Executado</p>
-                <h3 className={classes.cardTitle}>75%</h3>
+                <h3 className={classes.cardTitle}>{medida.executed_accumulated_value}</h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
@@ -85,7 +85,7 @@ export default function Balanco(props) {
                   <DoneAllIcon />
                 </CardIcon>
                 <p className={classes.cardCategory}>Medido</p>
-                <h3 className={classes.cardTitle}>65%</h3>
+                <h3 className={classes.cardTitle}>{medida.payed_accumulated_value}</h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>

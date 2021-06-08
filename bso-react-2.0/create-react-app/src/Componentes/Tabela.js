@@ -11,7 +11,10 @@ import Tasks from "../components/Tasks/Tasks.js";
 
 import { frentesativas, alertas} from "../variables/general.js";
 
-export default function DemoTabs() {
+export default function Tabela(props) {
+  
+  const { obra, medida} = props;
+
   return (
     <Tabs
       title="Feitos na Semana:"

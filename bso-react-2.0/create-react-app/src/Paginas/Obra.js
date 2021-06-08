@@ -220,8 +220,6 @@ function Obra(props) {
         <div className={classes.app}>
           <BarraTopo onDrawerToggle={handleDrawerToggle} nome={obra.object_name}/>
           <main className={classes.main}>
-            
-            
             <Box
               sx={{
                 minHeight: '100%',
@@ -240,9 +238,8 @@ function Obra(props) {
                     xl={9}
                     xs={12}
                   >
-                    
-                    <Balanco {...props} obra={obra}/>
-                    <Tabela />
+                    <Balanco {...props} obra={obra} medida={medida}/>
+                    <Tabela {...props} obra={obra} medida={medida}/>
                   </Grid>
                   <Grid
                     item
