@@ -27,6 +27,7 @@ import { DriveEtaTwoTone } from '@material-ui/icons';
 import Tabela from '../Componentes/Tabela';
 import DetalhesProjeto from '../Componentes/DetalhesProjeto';
 import Balanco from '../Componentes/Balanco';
+import PostMedida from '../Componentes/PostMedida';
 
 
 
@@ -254,6 +255,7 @@ function Obra(props) {
                     {/*<Fotos fotos={obra.fotos}></Fotos>*/}
                     Mostrar algo
                     {medida.construction_id}
+                  <PostMedida />
                   </Box>
                 </Grid> 
               </Container>
