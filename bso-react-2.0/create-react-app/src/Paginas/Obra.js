@@ -253,7 +253,6 @@ function Obra(props) {
                   </Grid>
                   <Box>
                     {/*<Fotos fotos={obra.fotos}></Fotos>*/}
-                    Mostrar algo
                     {medida.construction_id}
                   <PostMedida />
                   </Box>

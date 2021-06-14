@@ -190,32 +190,12 @@ export default function App() {
       getData();
     }, []);
 
-  
-        // date2 = new Date(medidas[0].date)
-        // console.log(date2)
-        // console.log(typeof medidas[0].date)
-        // console.log(typeof date1)
-        // console.log(typeof obras[0].id)
-        // console.log(typeof medidas[0].construction_id)
-        // console.log(obras[6].id == medidas[0].construction_id)
-        // console.log('resposta5')
-        // date2 = new Date(medidas[0].date)
-        // console.log(date2)
-        // console.log(em.date)
-        // console.log(typeof em.date == typeof date2)
 
   return (
     <BrowserRouter>
       <Switch>
             <Route exact path='/' render={(props) => <Inicio {...props} />}></Route>
-            <Route exact path='/Obras' render={(props) => <RelacaodeObras {...props} />}></Route>
-            {/*<Route exact path='/'>
-              <Home> nome="Relação de Obras" obras={obras}</Home>
-            </Route>*/}
-            {/*<Route exact path='/obra' render={(props) => <Obra {...props} nome='Teste' />}>
-                
-            </Route>*/}
-            
+            <Route exact path='/Obras' render={(props) => <RelacaodeObras {...props} />}></Route>       
             {
               obras.map((item, index) => (
                   date1 = new Date("1000-05-11"),
@@ -227,7 +207,6 @@ export default function App() {
                           date1 = date2
                         }
                     }
-                    //<Route exact path={`/Obras/${item.id}`} render={(props) => <Obra {...props} obra={item} medida={ultimo}/>}></Route>
                   ),
                <Route exact path={`/Obras/${item.id}`} render={(props) => <Obra {...props} obra={item} medida={ultimos[index]}/>}></Route>      
               ))
